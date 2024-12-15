@@ -127,7 +127,7 @@ export const products: Product[] = [
     name: 'Apple Watch Ultra 2',
     category: 'Watch',
     price: 799.00,
-    image: 'https://www.apple.com/v/apple-watch-ultra-2/b/images/overview/design/design_ultra_2__ivhfxx06tqe2_large.jpg',
+    image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/watch-compare-ultra2-202409_GEO_IN_FMT_WHH?wid=236&hei=270&fmt=jpeg&qlt=90&.v=1725409397186',
     description: 'Next-level adventure.',
     specs: {
       display: 'Always-On Retina display',
@@ -141,7 +141,7 @@ export const products: Product[] = [
     name: 'Apple Watch Series 9',
     category: 'Watch',
     price: 399.00,
-    image: 'https://www.apple.com/v/apple-watch-series-9/a/images/overview/design/design_s9__d0gl3yowj5g2_large.jpg',
+    image: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRwfpzT9sU6YcTbN12fx4Qfbhon3mH978HIAZgXZA0OQM0Je8ezAnU1VuoGGtAs3FqarfhxHu6PvGpaI6UIgmRf6RZfRg_4jXRxET969a4c',
     description: 'Smarter. Brighter. Mightier.',
     specs: {
       chip: 'S9 SiP',
@@ -157,7 +157,7 @@ export const products: Product[] = [
     name: 'Apple Vision Pro',
     category: 'Vision',
     price: 3499.00,
-    image: 'https://www.apple.com/v/apple-vision-pro/a/images/overview/design/hardware_base__ecvqtqxq9hxy_large.jpg',
+    image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/vision-pro-gallery-payment-202401_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=95&.v=1701912705450',
     description: 'Welcome to the era of spatial computing.',
     specs: {
       chip: 'M2 and R1 chips',
