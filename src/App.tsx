@@ -1,26 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CartProvider } from './context/CartContext';
+import { FilterProvider, useFilter } from './context/FilterContext';
 import { Header } from './components/layout/Header';
 import { Navigation } from './components/layout/Navigation';
 import { ProductGrid } from './components/product/ProductGrid';
 import { CartPanel } from './components/cart/CartPanel';
 import { ProductDetails } from './components/product/ProductDetails';
 import { Footer } from './components/layout/Footer';
+import { RetroLoadingScreen } from './components/ui/RetroLoadingScreen';
 import { products } from './data/products';
 import { useCart } from './context/CartContext';
 import type { Product } from './types';
 
 function AppContent(): JSX.Element {
   const { cartOpen } = useCart();
+  const { isBlackAndWhite, toggleBlackAndWhite } = useFilter();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('Mac');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const filteredProducts = products.filter(product => 
     activeCategory === 'all' || product.category === activeCategory
   );
 
+  if (isLoading) {
+    return <RetroLoadingScreen />;
+  }
+
   return (
-    <div className="min-h-screen bg-black text-green-400 font-mono flex flex-col">
+    <div className={`min-h-screen bg-black text-green-400 font-mono flex flex-col ${isBlackAndWhite ? 'grayscale' : ''}`}>
       <Header />
       <Navigation onCategoryChange={setActiveCategory} activeCategory={activeCategory} />
       
@@ -29,7 +45,15 @@ function AppContent(): JSX.Element {
         <div className="border border-blue-600 p-4 mb-8">
           <div className="flex justify-between items-center">
             <div className="text-blue-400">&gt;&gt; BROWSING: {activeCategory.toUpperCase()}</div>
-            <div className="text-green-400">FOUND: {filteredProducts.length} PRODUCTS</div>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={toggleBlackAndWhite}
+                className="text-green-400 hover:text-green-300 transition-colors"
+              >
+                [B/W MODE: {isBlackAndWhite ? 'ON' : 'OFF'}]
+              </button>
+              <div className="text-green-400">FOUND: {filteredProducts.length} PRODUCTS</div>
+            </div>
           </div>
         </div>
 
@@ -78,7 +102,9 @@ function AppContent(): JSX.Element {
 export default function App(): JSX.Element {
   return (
     <CartProvider>
-      <AppContent />
+      <FilterProvider>
+        <AppContent />
+      </FilterProvider>
     </CartProvider>
   );
 }
