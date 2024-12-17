@@ -2,6 +2,8 @@
 
 Welcome to iRETRO, where the past meets the present! This unique project reimagines Apple's modern product lineup through the lens of 1990s computing aesthetics.
 
+<img width="1383" alt="image" src="https://github.com/user-attachments/assets/7b75e47a-277c-4255-8fe1-e52450edb2fa" />
+
 ## About
 
 Remember the days of green text on black screens? The satisfying glow of old CRT monitors? iRETRO brings back that classic computing feel while showcasing Apple's cutting-edge products. It's like discovering the latest iPhone through a time machine set to 1976!
@@ -34,7 +36,9 @@ Remember the days of green text on black screens? The satisfying glow of old CRT
 -  View detailed product specifications
 -  Add items to cart
 -  Retro-style checkout process
-  
+-  B.W Mode
+<img width="1790" alt="Screenshot 2024-12-17 at 8 42 32 PM" src="https://github.com/user-attachments/assets/380a019f-e4e2-4cbc-be9b-28a33362e723" />
+
 ## Fun Facts
 
 -  The design is inspired by classic computer terminals from the 1990s
